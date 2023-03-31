@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14.2
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=secretest
+      - POSTGRES_DB=golies
+    ports:
+      - 5433:5432
+    networks:
+      - goly-app
+
+networks:
+  goly-app:
